@@ -24,6 +24,25 @@ def oneclass_modify(lines) :
         
     return modified_lines
 
+# 확률값 제거
+def drop_probs(lines) :
+    
+    modified_lines = []
+    
+    for line in lines:
+        parts = line.split()
+        
+        if len(parts) == 5 :
+            pass
+        
+        else :
+            parts = parts[0:5]
+        
+        modified_line = ' '.join(parts)
+        modified_lines.append(modified_line)
+        
+    return modified_lines
+
 # 바뀐 리스트를 txt 파일로 저장
 
 def save_list_to_txt(path, save_list) :
