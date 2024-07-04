@@ -21,3 +21,28 @@ pip install seaborn thop
 # 이동하기
 cd /yolov7
 ```
+
+## 2.학습시키기
+```
+# 가상환경 구성
+python -m venv yolov7
+source /yolov7/yolov7/bin/activate
+
+# 가상환경 내 토치 환경 구성
+pip install torch==1.8.1+cu111 torchvision==0.9.1+cu111 torchaudio==0.8.1 -f https://download.pytorch.org/whl/torch_stable.html
+
+# 가상환경 내 yolov7 필요 패키지 설치
+pip install -r requirements.txt
+
+# docker 접속
+docker exec -it yolov7 /bin/bash
+
+# 가상환경 접속
+source /yolov7/yolov7/bin/activate
+
+# 경로 이동
+cd /yolov7
+
+# 훈련코드(초기)
+python train_aux.py --workers 8 --device 0 --batch-size 8 --data /yolov7/data/xray.yaml --img 1280 1280 --cfg /yolov7/cfg/training/yolov7-e6e-xray.yaml --project /Drive/model --weights /Drive/model/AXIS_20240703_trial1/weights/best.pt --name AXIS_20240704_trial1 --hyp /yolov7/data/hyp.scratch.p6.yaml
+```

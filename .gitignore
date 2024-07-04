@@ -3,7 +3,9 @@ xray/
 background/
 label/
 oneclasslabel/
-data/
 train/data/
 test_data/
 train_data/
+model/
+yolov7/yolov7/
+yolov7/__pycache__
